@@ -22,12 +22,12 @@
     <div id="app">
         <div class="container-fluid d-flex flex-column col-8 align-items-center mt-5">
             <div>
-                <h1 class="display-1 text-uppercase fw-bolder">Vue Slider</h1>
+                <h1 class="display-1 text-uppercase fw-bolder mb-5">Vue Slider</h1>
             </div>
             <div class="d-flex justify-content-center">
-                <div id="carousel" class="d-flex flex-column col-5 justify-content-center">
+                <div id="carousel" class="d-flex flex-column col-5 align-items-center">
                     <div id="card">
-                        <img class="w-100" 
+                        <img class="w-100 h-100 object-fit-cover" 
                             id="image" :src="slides[activeSlide].image" 
                             :alt="slides[activeSlide].title"
                             />
@@ -42,12 +42,12 @@
                         <img 
                         :src="thumb.image" 
                         :alt="thumb.title" 
-                        class="thumb w-75 img-fluid"
+                        class="thumb w-75 img-fluid w-100 h-100"
                         :class="index === activeSlide ? 'active' : ''"
                         @click="clickThumbnailImage(index)">
                     </div>
                 </div>
-                <div id="arrows" class="d-flex flex-column justify-content-evenly display-3">
+                <div id="arrows" class="d-flex flex-column justify-content-between display-3 ms-0">
                     <i @click="prev()" class="fa-solid fa-arrow-up"></i>
                     <i @click="next()" class="fa-solid fa-arrow-down"></i>
                 </div>

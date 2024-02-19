@@ -47,7 +47,7 @@ createApp({
     },
     methods: {
         prev(){
-            //controllo se ho il bottone console.log('ho cliccato prev');
+            // console.log('ho cliccato prev');
             this.activeSlide--;
             //ripetere sempre il ciclo in senso antiorario
             if(this.activeSlide < 0){
@@ -55,17 +55,32 @@ createApp({
             }
         },
         next(){
-            console.log('ho cliccato next');
+            // console.log('ho cliccato next');
             this.activeSlide++;
             //ripetere sempre il ciclo in senso orario
             if(this.activeSlide > this.slides.length - 1) {
                 this.activeSlide = 0;
             }
         },
+        // funzione 
         clickThumbnailImage(index) {
-            console.log('clicca img');
+            // console.log('clicca img');
             console.log(index);
             this.activeSlide = index;
         },
+        stopAutoPlay() {
+            // console.log('stop lo slider');
+            clearInterval(this.currentInterval);
+        },
+        startAutoPlay() {
+            // console.log('start lo slider');
+            this.currentInterval = setInterval(this.next, 3_000);
+        }
+    },
+
+    // questo autoplay parte al caricamento della pagina e cambia in automatico le immagini ogni 3 secondi
+    mounted() {
+        console.log('mounted funziona');
+        this.startAutoPlay();
     }
 }).mount('#app');
