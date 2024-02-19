@@ -25,3 +25,7 @@ body{
     opacity: 1;
     border: 3px solid white;
 }
+
+#arrows i{
+    cursor: pointer;
+}
