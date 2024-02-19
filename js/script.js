@@ -44,5 +44,28 @@ createApp({
             activeSlide: 0,    
 
         }
+    },
+    methods: {
+        prev(){
+            //controllo se ho il bottone console.log('ho cliccato prev');
+            this.activeSlide--;
+            //ripetere sempre il ciclo in senso antiorario
+            if(this.activeSlide < 0){
+            this.activeSlide = this.slides.length - 1;
+            }
+        },
+        next(){
+            console.log('ho cliccato next');
+            this.activeSlide++;
+            //ripetere sempre il ciclo in senso orario
+            if(this.activeSlide > this.slides.length - 1) {
+                this.activeSlide = 0;
+            }
+        },
+        clickThumbnailImage(index) {
+            console.log('clicca img');
+            console.log(index);
+            this.activeSlide = index;
+        },
     }
 }).mount('#app');

@@ -3,7 +3,6 @@ body{
 }
 
 #carousel{
-    position: absolute;
     top: 180px;
 }
 
@@ -11,5 +10,10 @@ body{
     position: relative;
     bottom: 140px;
     text-align: right;
+    width: 100%;
+}
+
+#thumbnails{
+    right: 220px;
 }
 

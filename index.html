@@ -24,18 +24,29 @@
             <div>
                 <h1 class="display-1 text-uppercase fw-bolder">Vue Slider</h1>
             </div>
-            
-            <div id="carousel" class="d-flex flex-column col-5 justify-content-center">
-                <div id="card">
-                    <img class="w-100" id="image" :src="slides[activeSlide].image" :alt="slides[activeSlide].title" />
-                    <div id="text" class="text-white p-3">
-                        <h3>{{ slides[activeSlide].title }}</h3>
-                        <p>{{ slides[activeSlide].text }}</p>
+            <div class="d-flex justify-content-center">
+                <div id="carousel" class="d-flex flex-column col-5 justify-content-center">
+                    <div id="card">
+                        <img class="w-100" 
+                            id="image" :src="slides[activeSlide].image" 
+                            :alt="slides[activeSlide].title"
+                            />
+                        <div id="text" class="text-white p-3">
+                            <h3>{{ slides[activeSlide].title }}</h3>
+                            <p>{{ slides[activeSlide].text }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="slider">
-
+                <div id="thumbnails" class="d-flex flex-column col-2 align-items-center">
+                    <div v-for="(thumb, index) in slides" class="thumb">
+                        <img 
+                        :src="thumb.image" 
+                        :alt="thumb.title" 
+                        class="thumb w-75 img-fluid"
+                        :class="index === activeSlide ? 'active' : ''"
+                        @click="clickThumbnailImage(index)">
+                    </div>
+                </div>
             </div>
         </div>
     </div>     
