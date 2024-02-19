@@ -19,18 +19,27 @@
      <!--script VueJs-->
      <script src="https://unpkg.com/vue@3"></script> 
 
-    <div id="app" class="container-fluid d-flex flex-column col-8 align-items-center mt-5">
-        <h1 class="display-1 text-uppercase fw-bolder">Vue Slider</h1>
+    <div id="app">
+        <div class="container-fluid d-flex flex-column col-8 align-items-center mt-5">
+            <div>
+                <h1 class="display-1 text-uppercase fw-bolder">Vue Slider</h1>
+            </div>
+            
+            <div id="carousel" class="d-flex flex-column col-5 justify-content-center">
+                <div id="card">
+                    <img class="w-100" id="image" :src="slides[activeSlide].image" :alt="slides[activeSlide].title" />
+                    <div id="text" class="text-white p-3">
+                        <h3>{{ slides[activeSlide].title }}</h3>
+                        <p>{{ slides[activeSlide].text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="slider">
 
-        <div id="carousel" class="d-flex flex-column col-6 justify-content-center">
-            <img class="w-100" :src="slides[activeSlide].image" :alt="slides[activeSlide].title" />
-            <div class="text">
-                <h3>{{ slides[activeSlide].title }}</h3>
-                <p>{{ slides[activeSlide].text }}</p>
             </div>
         </div>
-        
-    </div>
+    </div>     
+    
 
     
    
