@@ -43,6 +43,8 @@ createApp({
 
             activeSlide: 0,    
             currentInterval: 0,
+            // Aggiunto stato per l'autoplay
+            autoplay: true, 
         }
     },
     methods: {
@@ -75,8 +77,19 @@ createApp({
 
         },
         startAutoPlay() {
-            // console.log('start lo slider');
-            this.currentInterval = setInterval(this.next, 3_000);
+            this.currentInterval = setInterval(() => {
+                if (this.autoplay) {
+                    this.next();
+                }
+            }, 3000);
+        },
+        toggleAutoPlay() {
+            this.autoplay = !this.autoplay;
+            if (this.autoplay) {
+                this.startAutoPlay();
+            } else {
+                this.stopAutoPlay();
+            }
         },
 
     },
