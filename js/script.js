@@ -83,6 +83,7 @@ createApp({
                 }
             }, 3000);
         },
+        // funzione per gestire il play/pausa delle immagini
         toggleAutoPlay() {
             this.autoplay = !this.autoplay;
             if (this.autoplay) {
@@ -94,7 +95,7 @@ createApp({
 
     },
 
-    // questo autoplay parte al caricamento della pagina e cambia in automatico le immagini ogni 3 secondi
+    // questo autoplay parte al momento del click su play e cambia in automatico le immagini ogni 3 secondi
     mounted() {
         // console.log('mounted');
         this.startAutoPlay();
