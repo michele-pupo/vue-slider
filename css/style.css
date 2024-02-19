@@ -17,3 +17,11 @@ body{
     right: 220px;
 }
 
+#thumbnails .thumb{
+    opacity: 0.3;
+}
+
+#thumbnails .thumb.active{
+    opacity: 1;
+    border: 3px solid white;
+}
