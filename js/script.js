@@ -42,7 +42,7 @@ createApp({
                 ],
 
             activeSlide: 0,    
-
+            currentInterval: 0,
         }
     },
     methods: {
@@ -62,25 +62,28 @@ createApp({
                 this.activeSlide = 0;
             }
         },
-        // funzione 
+        // funzione per applucare l'"activeSlide" all'immagine cliccata
         clickThumbnailImage(index) {
             // console.log('clicca img');
-            console.log(index);
+            // console.log(index);
             this.activeSlide = index;
+
         },
         stopAutoPlay() {
             // console.log('stop lo slider');
             clearInterval(this.currentInterval);
+
         },
         startAutoPlay() {
             // console.log('start lo slider');
             this.currentInterval = setInterval(this.next, 3_000);
-        }
+        },
+
     },
 
     // questo autoplay parte al caricamento della pagina e cambia in automatico le immagini ogni 3 secondi
     mounted() {
-        console.log('mounted funziona');
+        // console.log('mounted');
         this.startAutoPlay();
     }
 }).mount('#app');
